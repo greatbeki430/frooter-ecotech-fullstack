@@ -80,56 +80,73 @@
     </div>
 
     <!-- Main Content -->
-    <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-50">
-      <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-32 pb-16 lg:py-24">
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <svg class="h-full w-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5" />
+          </pattern>
+          <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-12 items-center relative z-10">
+
         <div class="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase tracking-widest">
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-black uppercase tracking-widest border border-emerald-100">
             <span class="relative flex h-2 w-2">
               <span
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            New Drop: Solar Collection 2025
+            Live: The 2025 Eco-Registry
           </div>
 
-          <h1 class="text-7xl xl:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter">
-            TECH THAT <br />
-            <span class="text-emerald-600">LOVES</span> THE <br />
-            PLANET.
+          <h1 class="text-5xl md:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.85] tracking-tighter italic">
+            TECH FOR <br />
+            <span class="text-emerald-600">GOOD.</span> <br />
+            PERIOD.
           </h1>
 
           <p class="text-gray-500 text-lg max-w-md font-medium leading-relaxed">
-            Sustainable, recycled, and solar-powered accessories designed for the modern lifestyle. Fast shipping, zero
-            plastic.
+            We’ve reimagined everyday essentials using 100% recycled ocean plastic and bio-based polymers. High
+            performance, zero footprint.
           </p>
 
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-col sm:flex-row gap-4">
             <router-link to="/products"
-              class="px-10 py-5 bg-gray-900 text-white font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-emerald-600 transition-all hover:shadow-2xl hover:-translate-y-1 active:scale-95">
-              Explore Shop
+              class="px-10 py-5 bg-gray-900 text-white font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-emerald-600 transition-all hover:shadow-2xl hover:-translate-y-1 active:scale-95 text-center">
+              Shop Collection
             </router-link>
             <button @click="showMissionModal = true"
               class="px-10 py-5 bg-white text-gray-900 border border-gray-200 font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-gray-50 transition-all active:scale-95">
-              Our Mission
+              Our Vision
             </button>
           </div>
 
-          <div class="pt-8 flex gap-8 items-center border-t border-gray-200">
-            <div v-for="badge in ['Carbon Neutral', '1% For Planet', 'Recycled Tech']" :key="badge"
-              class="text-[9px] font-black uppercase tracking-tighter text-gray-400">
-              ✓ {{ badge }}
+          <div class="pt-8 flex flex-wrap gap-x-8 gap-y-4 items-center border-t border-gray-100">
+            <div v-for="badge in ['Carbon Neutral', '1% For Planet', 'Bio-Based']" :key="badge"
+              class="text-[9px] font-black uppercase tracking-tighter text-gray-400 flex items-center gap-2">
+              <span class="w-1 h-1 bg-emerald-500 rounded-full"></span> {{ badge }}
             </div>
           </div>
         </div>
 
-        <div class="relative group">
+        <div class="relative group mt-10 lg:mt-0">
           <div
-            class="absolute -inset-4 bg-emerald-200/50 rounded-[3rem] blur-3xl group-hover:bg-emerald-300/50 transition-colors duration-700">
+            class="absolute -inset-10 bg-emerald-100/40 rounded-full blur-3xl group-hover:bg-emerald-200/40 transition-colors duration-1000">
           </div>
-          <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=1200"
-            class="relative rounded-[3rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
-            alt="Eco Tech Hero" />
+
+          <div
+            class="relative rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] transform transition-transform duration-700 group-hover:scale-[1.01]">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1200"
+              class="w-full aspect-[4/5] lg:aspect-square object-cover" alt="Minimalist Sustainable Product" />
+            <div class="absolute bottom-8 right-8 bg-white/90 backdrop-blur-md px-6 py-4 rounded-3xl shadow-xl">
+              <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none">Material</p>
+              <p class="text-lg font-black text-gray-900 tracking-tighter">100% Recycled</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
