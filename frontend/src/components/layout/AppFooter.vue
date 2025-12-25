@@ -81,7 +81,7 @@
           &copy; 2025 EcoTechMart &bull; Sustainable Future
         </p>
 
-        <div class="flex flex-wrap justify-center md:justify-end gap-4 pr-0 md:pr-20">
+        <div class="flex flex-wrap justify-center md:justify-end gap-4 pr-20 md:pr-25">
           <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-emerald-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-lg group"
             :title="social.name">
